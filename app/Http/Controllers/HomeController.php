@@ -34,11 +34,11 @@ class HomeController extends Controller
         $comment->user_id = Auth::id();
         $comment->save();
         // dd(Comment::all());
-        return response()->json(['comments'=>Comment::with(['user'])->orderBy('created_at', 'desc')->get(),
+        return response()->json(['comments'=>Comment::with(['user'])->orderBy('created_at', 'asc')->get(),
         'loginuserid'=>Auth::id()]);
     }
 
     public function show(){
-        return response()->json(['comments'=>Comment::with(['user'])->orderBy('created_at', 'desc')->get(),'loginuserid'=>Auth::id()]);
+        return response()->json(['comments'=>Comment::with(['user'])->orderBy('created_at', 'asc')->get(),'loginuserid'=>Auth::id()]);
     }
 }

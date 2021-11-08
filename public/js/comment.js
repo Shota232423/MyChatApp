@@ -1,6 +1,8 @@
 $(function(){
     get_comment();
     post_comment();
+    //スクロール下からに変更する
+
 });
 
 //メッセージをgetする関数
